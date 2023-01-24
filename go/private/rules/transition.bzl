@@ -396,7 +396,7 @@ def _non_go_transition_impl(settings, _attr):
             # Reset to the original value of the setting before go_transition.
             new_settings[key] = json.decode(original_value)
         else:
-            new_settings[key] = settings[key]
+            new_settings[key] = _common_reset_transition_dict[key]
 
         # Reset the value of the helper setting to its default for two reasons:
         # 1. Performance: This ensures that the Go settings of non-Go
